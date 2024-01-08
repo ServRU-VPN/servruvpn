@@ -1,0 +1,6 @@
+display_name: MrzbCLI VPN
+publisher_display_name: Hiddify
+identity_name: app.mrzbcli.ru
+msix_version: 1.0.0.0
+logo_path:  windows\runner\resources\app_icon.ico
+capabilities: internetClient, privateNetworkClientServer
