@@ -220,9 +220,9 @@ jobs:
           mv dist/*/*.$EXT tmp_out/${{matrix.filename}}.$EXT
           chmod +x tmp_out/${{matrix.filename}}.$EXT
           if [ "${{matrix.platform}}" == "linux" ];then
-            cp ./.github/help/linux/* tmp_out/
+            cp ./github/help/linux/* tmp_out/
           else
-            cp ./.github/help/mac-windows/* tmp_out/
+            cp ./github/help/mac-windows/* tmp_out/
           fi
           if [[ "${{matrix.platform}}" == 'ios' ]];then
             mv tmp_out/${{matrix.filename}}.ipa bin/${{matrix.filename}}.ipa
