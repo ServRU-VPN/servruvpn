@@ -49,11 +49,11 @@ jobs:
             targets: AppImage
             filename: MrzbCLI-linux-x64
 
-          - platform: macos
-            os: macos-13
-            aarch: universal
-            targets: dmg
-            filename: MrzbCLI-macos-universal
+          #- platform: macos
+           # os: macos-13
+            #aarch: universal
+            #targets: dmg
+            #filename: MrzbCLI-macos-universal
 
           # - platform: ios
           #   os: macos-13
