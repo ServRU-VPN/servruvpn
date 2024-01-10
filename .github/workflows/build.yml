@@ -245,14 +245,14 @@ jobs:
       #         find "." -type f -name "*.$EXT" -exec cp {} "tmp_out" \;
       #     done
 
-      #     mv tmp_out/*.AppImage tmp_out/hiddify-linux-x64.AppImage &&\
-      #     chmod +x tmp_out/hiddify-linux-x64.AppImage &&\
+      #     mv tmp_out/*.AppImage tmp_out/MrzbCLI-linux-x64.AppImage &&\
+      #     chmod +x tmp_out/MrzbCLI-linux-x64.AppImage &&\
       #     cp ./.github/help/linux/* tmp_out/ \
       #     ||echo "no app image"
-      #     mv tmp_out/*.dmg tmp_out/hiddify-macos-universal.dmg && \
+      #     mv tmp_out/*.dmg tmp_out/MrzbCLI-macos-universal.dmg && \
       #     cp ./.github/help/mac-windows/* tmp_out/ \
       #     || echo "no macos dmg"
-      #     cd tmp_out && 7z a hiddify-${{matrix.platform}}-x64.zip ./ && mv *.zip ../out/
+      #     cd tmp_out && 7z a MrzbCLI-${{matrix.platform}}-x64.zip ./ && mv *.zip ../out/
       # Important! Cleanup: remove the certificate and provisioning profile from the runner!
       - name: Clean up keychain and provisioning profile
         if: ${{ always() && startsWith(matrix.os,'macos')}}
@@ -319,7 +319,7 @@ jobs:
           ls -R ./out
           ls -R ./.github/
           ls -R ./.git/
-          mv out/hiddify-android-market.aab  hiddify-android-market.aab
+          mv out/MrzbCLI-android-market.aab  MrzbCLI-android-market.aab
 
       - name: prepare_release_message
         run: |
@@ -380,7 +380,7 @@ jobs:
         uses: isaacrlevin/winget-publish-action@v.5
         with:
           publish-type: 'Update'
-          user: 'Hiddify'
+          user: 'noa1ms'
           package: 'Next'
           version: ${{ steps.version.outputs.value }}
           url: 'https://github.com/ServRU-VPN/servruvpn/releases/download/${{ github.ref_name }}/MrzbCLI-windows-x64-setup.zip'
@@ -390,8 +390,8 @@ jobs:
         uses: isaacrlevin/winget-publish-action@v.5
         with:
           publish-type: 'Update'
-          user: 'Hiddify'
+          user: 'noa1ms'
           package: 'Next.Beta'
           version: ${{ steps.version.outputs.value }}
-          url: 'https://github.com/hiddify/hiddify-next/releases/download/${{ github.ref_name }}/MrzbCLI-windows-x64-setup.zip'
+          url: 'https://github.com/ServRU-VPN/servruvpn/releases/download/${{ github.ref_name }}/MrzbCLI-windows-x64-setup.zip'
           token: ${{ secrets.WINGET_TOKEN }}
